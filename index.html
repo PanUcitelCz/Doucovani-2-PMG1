@@ -1,1 +1,43 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
 
+    </header>
+    <main>
+        <div class="nadpis">
+            <h1>Faktura</h1>
+        </div>
+        <div class="input>
+            <label for="Polozka">Název položky</label>             
+            <input type="text" name="Polozka" id="polozka">
+            <label for="Kusy">Množství</label>
+            <input type="text" name="kusy" id="kosy">
+            <label for="Cena">Cena za kus</label>
+            <input type="number" name="Cena" id="cena">
+            <button onclick="Pridat">Přidat</button>
+        </div>
+        <div class="seznan">
+            <p class="vypis_seznamu"></p>
+        </div>
+        <div class="platba">
+            <label for="myBrowser">Choose a browser from this list:</label>
+            <input list="browsers" id="myBrowser" name="myBrowser" />
+            <datalist id="browsers">
+            </datalist>
+            <label for="Mnozstvi">Počet kusu</label>
+            <input type="number">
+            <button onclick="Zaplatit_vyber">Zaplatit vybrané položky</button>
+            <button onclick="Zapaltit">Zaplatit vše</button>
+        </div>
+    </main>
+    <footer>
+
+    </footer>
+</body>
+</html>
