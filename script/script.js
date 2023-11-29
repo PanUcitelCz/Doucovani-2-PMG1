@@ -28,11 +28,11 @@ function Pridat() {
     let prijmeni = document.getElementById("surname");
     let rocnik = document.getElementById("rocnik");
 
-    if (jmeno.value !== "" && isNaN(jmeno.value)) {
+    if ((jmeno.value != "") && (isNaN(jmeno.value))) {
 
-        if (prijmeni.value !== "" && isNaN(prijmeni.value)) {
+        if ((prijmeni.value != "") && (isNaN(prijmeni.value))) {
 
-            if (rocnik.value !== "" && !isNaN(rocnik.value) && rocnik.value > 0 && rocnik.value < 10) {
+            if ((rocnik.value != "") && (!isNaN(rocnik.value)) && (rocnik.value > 0) && (rocnik.value < 10)) {
 
                 let cislo = "";
                 for (let i = 0; i < 5; i++) {
