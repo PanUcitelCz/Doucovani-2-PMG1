@@ -4,36 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    
+    <link rel="stylesheet" href="/style/dist/style.css">
+    <script src="/script/script.js"></script>
 </head>
 <body>
     <header>
 
     </header>
     <main>
-        <div class="nadpis">
-            <h1>Faktura</h1>
-        </div>
-        <div class="input>
-            <label for="Polozka">Název položky</label>             
-            <input type="text" name="Polozka" id="polozka">
-            <label for="Kusy">Množství</label>
-            <input type="text" name="kusy" id="kosy">
-            <label for="Cena">Cena za kus</label>
-            <input type="number" name="Cena" id="cena">
-            <button onclick="Pridat">Přidat</button>
+        <div class="hero">
+            <div class="nadpis">
+                <h1>Seznam žáků</h1>
+            </div>
+            <div class="nabidka">
+                <label for="name">Jméno</label>             
+                <input type="text" name="name" id="name">
+                <label for="surname">Příjmení</label>
+                <input type="text" name="surname" id="surname">
+                <label for="rocnik">Ročník</label>
+                <input type="text" name="rocnik" id="rocnik">
+                <button onclick="Pridat()">Přidat</button>
+                <button onclick="Vyhledej()">Vyhledej</button>
+            </div>
         </div>
         <div class="seznan">
-            <p class="vypis_seznamu"></p>
-        </div>
-        <div class="platba">
-            <label for="myBrowser">Choose a browser from this list:</label>
-            <input list="browsers" id="myBrowser" name="myBrowser" />
-            <datalist id="browsers">
-            </datalist>
-            <label for="Mnozstvi">Počet kusu</label>
-            <input type="number">
-            <button onclick="Zaplatit_vyber">Zaplatit vybrané položky</button>
-            <button onclick="Zapaltit">Zaplatit vše</button>
+            <table id="studentTable">
+                <tr>
+                    <th>Jméno</th>
+                    <th>Příjmení</th>
+                    <th>Třída</th>
+                </tr>
+            </table>
         </div>
     </main>
     <footer>

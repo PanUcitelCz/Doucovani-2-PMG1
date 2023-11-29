@@ -1,5 +1,0 @@
-let pole = [];
-
-function Pridat(){
-    
-}
