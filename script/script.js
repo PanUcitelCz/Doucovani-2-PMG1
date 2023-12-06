@@ -1,12 +1,13 @@
 let pole = [];
 const seznam = [];
+let cislo = 0;
 
 function VypisDoTabulky() {
     let table = document.getElementById("studentTable");
 
     // Vymaž aktuální obsah tabulky
     table.innerHTML = '';
-
+    let cislo = 1;
     for (let i = 0; i < seznam.length; i++) {
         let newRow = table.insertRow(table.rows.length);
 
@@ -18,8 +19,8 @@ function VypisDoTabulky() {
         tab_jmeno.innerHTML = seznam[i].Jmeno;
         tab_prijmeni.innerHTML = seznam[i].Prijmeni;
         tab_rocnik.innerHTML = seznam[i].Rocnik;
-        let cislo = seznam[i].Id;
-        tab_id.innerHTML = cislo; // Opraveno přiřazení
+        
+        tab_id.innerHTML = cislo++; // Opraveno přiřazení
     }
 }
 
@@ -34,20 +35,23 @@ function Pridat() {
 
             if ((rocnik.value != "") && (!isNaN(rocnik.value)) && (rocnik.value > 0) && (rocnik.value < 10)) {
 
-                let cislo = "";
-                for (let i = 0; i < 5; i++) {
-                    let Nahodne_cislo = Math.floor(Math.random() * 10);
-                    cislo += Nahodne_cislo;
-                }
+                
+                cislo++;
 
                 seznam.push({ Jmeno: jmeno.value, Prijmeni: prijmeni.value, Rocnik: rocnik.value, Id: cislo });
-
                 VypisDoTabulky();
             }
+            else{
+                alert("Nezadal jsi pouze číslo");
+            }
         }
-    } else {
+        else{
+            alert("Zadal jsi chybně příjmení");
+        }
+    } 
+    else {
         alert("Jsi si jisty, že nejsi opilý?");
     }
 
-    console.log(seznam);
+    //console.log(seznam);
 }
