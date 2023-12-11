@@ -7,7 +7,7 @@ function VypisDoTabulky() {
 
     // Vymaž aktuální obsah tabulky
     table.innerHTML = '';
-    let cislo = 1;
+    let cislo = 1; // číslování
     for (let i = 0; i < seznam.length; i++) {
         let newRow = table.insertRow(table.rows.length);
 
@@ -20,7 +20,7 @@ function VypisDoTabulky() {
         tab_prijmeni.innerHTML = seznam[i].Prijmeni;
         tab_rocnik.innerHTML = seznam[i].Rocnik;
         
-        tab_id.innerHTML = cislo++; // Opraveno přiřazení
+        tab_id.innerHTML = cislo++; // Přiřazení pořadí id
     }
 }
 
@@ -34,11 +34,7 @@ function Pridat() {
         if ((prijmeni.value != "") && (isNaN(prijmeni.value))) {
 
             if ((rocnik.value != "") && (!isNaN(rocnik.value)) && (rocnik.value > 0) && (rocnik.value < 10)) {
-
-                
-                cislo++;
-
-                seznam.push({ Jmeno: jmeno.value, Prijmeni: prijmeni.value, Rocnik: rocnik.value, Id: cislo });
+                seznam.push({ Jmeno: jmeno.value, Prijmeni: prijmeni.value, Rocnik: rocnik.value});
                 VypisDoTabulky();
             }
             else{
@@ -54,4 +50,33 @@ function Pridat() {
     }
 
     //console.log(seznam);
+}
+
+function Odebrat_posledni(){
+    seznam.pop();
+    console.log(seznam);
+
+    VypisDoTabulky();
+}
+
+function Odebrat_prvni(){
+    seznam.shift();
+    console.log(seznam);
+
+    VypisDoTabulky();
+}
+
+function Odebrat_pozici(){
+    let vstup = document.getElementById("odstranit"); 
+
+    
+    if((!isNaN(vstup.value)) && (vstup.value != "") && (vstup.value>0) && (vstup.value<=seznam.length)){
+        seznam.splice(vstup.value-1, 1); // (kde má začít(vstup-1), kolik prvků odstraní)
+        console.log(seznam);
+
+        VypisDoTabulky();
+    }
+    else{
+        alert("Asi jsi zadal něco špatně");
+    }
 }
